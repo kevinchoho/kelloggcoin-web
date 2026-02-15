@@ -18,6 +18,25 @@ cat > app/views/transactions/index.html.erb << 'EOF'
 </ol>
 EOF
 <!-- Step 2: Calculate and display the balances -->
+puts "User Balances"
+puts "============="
+puts ""
+
+# Loop through all users (no hard-coding)
+User.all.each do |user|
+
+  # Sum of money received
+  total_received = Transaction.where({ "to_user_id" => user.id }).sum("amount")
+
+  # Sum of money sent
+  total_sent = Transaction.where({ "from_user_id" => user.id }).sum("amount")
+
+  # Calculate balance
+  balance = total_received - total_sent
+
+  # Display result
+  puts "Balance for #{user.name}: #{balance} KC"
+end
 
 <!-- 
 Expected balances:
