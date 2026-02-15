@@ -17,7 +17,7 @@
 #<h2>User Balances</h2>
 
 #<ul>
-  #<% @users.each do |user| %>
+  <% @users.each do |user| %>
     <%
       total_received = Transaction.where(to_user_id: user.id).sum(:amount)
       total_sent = Transaction.where(from_user_id: user.id).sum(:amount)
@@ -25,7 +25,7 @@
     %>
     <li>Balance for <%= user.name %>: <%= balance %> KC</li>
   <% end %>
-</ul>
+#</ul>
 
 
 <h1>User Balances</h1>
