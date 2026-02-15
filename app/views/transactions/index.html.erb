@@ -2,6 +2,21 @@
 
 <!-- Step 1: List all transactions, starting with the ICO -->
 
+cat > app/views/transactions/index.html.erb << 'EOF'
+
+<h1>Transaction List (100 Transactions)</h1>
+
+<ol>
+    <li>
+      <% if transaction.from_user %>
+        <%= "#{transaction.amount} KC from #{transaction.from_user.name} to #{transaction.to_user.name}" %>
+      <% else %>
+        <%= "Initial coin offering: #{transaction.amount} to #{transaction.to_user.name}" %>
+      <% end %>
+    </li>
+  <% end %>
+</ol>
+EOF
 <!-- Step 2: Calculate and display the balances -->
 
 <!-- 

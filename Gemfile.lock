@@ -127,12 +127,9 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.14.0)
+    nokogiri (1.14.5)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.14.0-x86_64-linux)
-      racc (~> 1.4)
-    ostruct (0.6.3)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -225,7 +222,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   debug
-  ostruct
   puma (>= 5.0)
   rails (~> 8.1.2)
   sqlite3 (~> 2.1)
