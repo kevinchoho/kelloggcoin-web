@@ -1,3 +1,6 @@
-def balances
-  @users = User.all
+class TransactionsController < ApplicationController
+  def index
+    @transactions = Transaction.all
+    @users = User.all
+  end
 end
